@@ -20,6 +20,21 @@ public class EncryptTest {
         Encrypt testEncrypting = new Encrypt("Keith", 1);
         assertEquals(1, testEncrypting.getUserKey());
     }
+    @Test
+    public void checksValidity()
+    {
+        Encrypt testEncrypting = new Encrypt("Keith", 1);
+        assertEquals(true, testEncrypting.checksValidity());
+    }
+    @Test
+    public void checksKeyValidity()
+    {
+        Encrypt testEncrypting = new Encrypt("Keith", 1);
+        assertEquals(true, testEncrypting.checksKeyValidity());
+    }
+
+
+
 
 
 }
