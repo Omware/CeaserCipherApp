@@ -32,6 +32,12 @@ public class EncryptTest {
         Encrypt testEncrypting = new Encrypt("Keith", 1);
         assertEquals(true, testEncrypting.checksKeyValidity());
     }
+    @Test
+    public void validEncoding()
+    {
+        Encrypt testEncrypting = new Encrypt("Keith", 1);
+        assertEquals("MGNXKP MQUIGK" , testEncrypting.encrypt());
+    }
 
 
 

@@ -18,7 +18,7 @@ public class DecryptTest {
     public void decryptuserInputString_string(){
         Decrypt testEncrypting = new Decrypt("QEB NRFZH YOLTK CLU GRJMP LSBO QEB IXWV ALD", 1);
         String expectedOuput = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";
-        assertEquals(expectedOuput,testEncrypting.getDecription());
+        assertEquals(expectedOuput,testEncrypting.getDescription());
     }
 
 

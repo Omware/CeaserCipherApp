@@ -28,5 +28,25 @@ public class Encrypt {
         return userKey >0 && userKey < 26;
 
     }
+    public String encrypt()
+    {
+        String encoded = "";
+        String encodedArray[] = userInputText.split("");
+        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        for (int i = 0; i<encodedArray.length;i++)
+        {
+            if (userInputText.charAt(i) == ' ')
+            {
+                encoded += " ";
+            }
+            else
+            {
+                int charPosition = alphabet.indexOf(userInputText.charAt(i));
+                int key = (userKey + charPosition) % 26;
+                encoded += alphabet.charAt(key);
+            }
+        }
+        return encoded.toUpperCase();
+    }
 
 }

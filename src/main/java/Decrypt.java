@@ -6,14 +6,39 @@ public class Decrypt {
         userInputText = InputText;
     }
     public String getUserInputText() {
-        return userInputText;
+        return this.userInputText;
     }
     public int getUserKey() {
 
-        return userKey;
+        return this.userKey;
     }
-    public String getDecription() {
+    public String getDescription() {
 
+        String decodedValue = "";
+        String newArr[] = userInputText.split("");
+        String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        for (int i = 0; i<newArr.length;i++)
+        {
+            if (userInputText.charAt(i) == ' ')
+            {
+                decodedValue += " ";
+            }
+            else
+            {
+                int charPosition = letters.indexOf(userInputText.charAt(i));
+                int keyVal = (charPosition - userKey) % 26;
+
+                if (keyVal < 0)
+                {
+                    keyVal = letters.length() + keyVal;
+                }
+
+                char replaceValue = letters.charAt(keyVal);
+                decodedValue += replaceValue;
+            }
+        }
+        return decodedValue;
     }
-
 }
+
+
